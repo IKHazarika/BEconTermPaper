@@ -1,6 +1,11 @@
-privateSymmetricMarket[1,]
+#We use the dataset generated in the Python code file
+#The data is self generated and organised carefully to NOT require any cleaning
+
+#We define the "fraction of herders" variable described in the manuscript
 
 privateSymmetricMarket$FracOfHerders <- 1 - privateSymmetricMarket$FracOfRandBid - privateSymmetricMarket$FracOfTruth
+
+#We run 6 models described at length in the manuscript and export the results to Latex
 
 model1 <- lm(TotalSurplus ~ NumSellers + FracOfHerders + FracOfRandBid + TypeHomophily + PositionHomophily + ValueHomophily + Density, data = privateSymmetricMarket)
 summary(model1)
